@@ -1,3 +1,20 @@
+:root{
+  --body-color-from:#e1faf4;
+  --body-color-to:#9fc4fc;
+  --card-bg-color:#DFFFFD;
+  --card-box-shadow: 0 0 10px 2px rgba(0 , 0, 0, 0.1);
+  --heading-context:rgb(0, 109, 0);
+  --white:white;
+}
+[data-theme="dark"]:root{
+  --body-color-from:#301934;
+  --body-color-to:#36454F;
+  --card-bg-color:#AA98A9;
+  --card-box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.213);
+  --heading-context:rgb(251, 141, 194);
+  --white:black;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +22,827 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to left,var(--body-color-from), var(--body-color-to));
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+textarea::-webkit-scrollbar {
+  background-color: #003262;
+  width: 5px;
+
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #6082B6;
+  outline: 1px solid rgb(86, 121, 156);
+}
+
+
+
+/* cart and home style section  */
+.cartNotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  width: 90%;
+  margin: 100px auto;
+}
+
+.cartNotes .linkElement {
+  text-decoration: none;
+
+}
+
+.card-item {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--card-bg-color);
+  color: rgb(15, 96, 150);
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+  box-shadow: var(--card-box-shadow);
+}
+
+.card-item>h1 {
+  transition: ease-in-out 0.5s;
+}
+
+.card-item:hover {
+  box-shadow: 1px 1px 8px #0095B6;
+  transform: translateY(-10px);
+}
+
+.card-item:hover>h1 {
+  transform: translateY(-10px);
+  color: red;
+}
+
+.card-item>.iconCart {
+  font-size: 80px;
+  color: #035189d3;
+}
+
+.card-item>p {
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+.card-item:hover>p {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+
+.card-item .count {
+  width: 30px;
+  height: 30px;
+  background-color: var(--heading-context);
+  color: var(--white);
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* authentectation style section  */
+.authContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.authContent>button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  width: fit-content;
+  border-radius: 30px;
+  background-color: #003262;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Varela Round', sans-serif;
+  transition: ease-in-out 0.3s;
+}
+
+.authContent>button:hover {
+  opacity: 0.8;
+  transform: translateY(-10%);
+}
+
+.authContent>button i {
+  margin-left: 10px;
+  color: rgb(151, 86, 86);
+}
+
+
+/* heading style section  */
+.Heading {
+  width: 100%;
+}
+
+.Heading .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 60px;
+  width: 80%;
+  font-size: 40px;
+  color: white;
+  margin: 0 auto;
+}
+
+.Heading .navbar>a {
+  color: #003262;
+  height: 80px
+}
+.Heading .navbar .icon {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.2);
+}
+.Heading .navbar .sun{
+  color: #ffd500;
+}
+.Heading .navbar .moon{
+  color: white;
+  width: 40px;
+}
+.Heading>h1 {
+  color: var(--heading-context);
+  font-size: 70px;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+  margin: 10px auto;
+  display: block;
+  width: fit-content;
+}
+
+
+
+
+/* todo style sectin  */
+.todo {
+  background-color: #d8d8d8;
+  width: 80%;
+  min-height: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.todo>h3 {
+  color: #333;
+  text-align: center;
+  font-style: italic;
+}
+
+.todo .task {
+  background-color: #eee;
+  width: 90%;
+  height: 60px;
+  margin: 10px auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  transition: ease-in-out 0.3s;
+}
+
+
+.todo .task>.inputTask {
+  width: 80%;
+  border: none;
+  border-radius: 10px;
+  height: 100%;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 20px;
+  background-color: #eee;
+  transition: ease-in-out 0.3s;
+}
+
+.todo .taskDone {
+  background-color: #757575;
+  opacity: 0.8;
+  position: relative;
+  transition: ease-in-out 0.3s;
+}
+
+.todo .taskDone>.inputTask {
+  background-color: #757575;
+  opacity: 0.7;
+  position: relative;
+  transition: ease-in-out 0.3s;
+
+}
+
+.todo .taskDone::after {
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  top: 30px;
+  border-radius: 10px;
+  margin: 0 10px;
+  transition: ease-in-out 0.3s;
+}
+
+.todo .task .inputTask:focus {
+  outline: none;
+  transition: ease-in-out 0.3s;
+}
+
+.todo .task .taskIcon {
+  color: #003262;
+  font-size: 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+
+}
+
+.todo .task .taskIcon:hover {
+  color: red;
+}
+
+.todo .task:focus-within {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.todo .task .checkboxTask {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+  background-color: red;
+}
+
+.todo .task .checkboxTask:focus {
+  background-color: #003262;
+}
+
+
+
+
+
+/* notes style section  */
+.notes {
+  width: 90%;
+  min-height: fit-content;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.notes .soloNote {
+  background-color: #B9D9EB;
+  width: 250px;
+  height: 300px;
+  padding: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  transition: ease-in-out 0.3s;
+  transition: display ease-in-out 0.3s;
+  position: relative;
+}
+
+@media (max-width:767px) {
+  .notes .soloNote {
+    width: 100%;
+  }
+}
+
+.notes .soloNote:focus-within {
+  outline: 1px solid blue;
+}
+
+.notes .soloNote .trashIcon {
+  color: #003262;
+  font-size: 20px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.notes .soloNote .trashIcon:hover {
+  color: red;
+}
+
+.notes .soloNote:focus-within .trashIcon {
+  opacity: 1;
+}
+
+.notes .soloNote .headNote {
+  width: 100%;
+  height: 40px;
+}
+
+.notes .soloNote .headNote .textHead {
+  font-size: 20px;
+  color: black;
+  border: none;
+  padding: 5px;
+  border-radius: 8px 8px 0 0;
+  height: 40px;
+  width: 98%;
+  background-color: inherit;
+}
+
+.notes .soloNote .headNote .textHead:focus {
+  outline: none;
+}
+
+.notes .soloNote .textNote {
+  width: 98%;
+  min-height: 220px;
+  resize: none;
+  padding: 5px;
+  margin-top: 10px;
+  border: none;
+  border-top: 2px solid #003262;
+  border-radius: 0 0 8px 8px;
+  background-color: inherit;
+  font-size: 17px;
+  line-height: 25px;
+  font-family: 'Kalam', cursive;
+}
+
+.notes .soloNote .textNote:focus {
+  outline: none;
+}
+
+.notes .soloNote .submitNote {
+  background-color: #003262;
+  color: #eee;
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border-radius: 50%;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.notes .soloNote .submitNote:hover {
+  opacity: 0.8;
+}
+
+.notes .soloNote .colors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
+}
+
+.notes .soloNote .colors>button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.notes .soloNote .colors .active {
+  border: 1px solid #003262;
+}
+
+
+
+.notes .plusElement {
+  background-color: #eee;
+  width: 250px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 8px;
+  color: #003262;
+  font-weight: bold;
+  margin: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  opacity: 0.7;
+  transition: ease-in-out 0.3s;
+}
+
+.notes .plusElement>p {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.notes .plusElement .plusIcon {
+  color: #003262;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.notes .plusElement:hover {
+  opacity: .8;
+}
+
+
+
+
+
+/* books section style  */
+.books {
+  background-color: #eee;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 8px;
+  min-height: 300px;
+}
+.books .head-books{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.books .head-books>h1 {
+  color: #003262;
+  text-transform: capitalize;
+  font-family: 'Times New Roman', Times, serif;
+}
+.books .head-books .button{
+  width: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.books .head-books .button .icon-button-book{
+  border-radius: 50%;
+  border: 1px solid #003262;
+  background-color: #0095B6;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.books .head-books .button .icon-button-book:hover{
+  opacity: 0.8;
+}
+
+
+.books .list-books{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: auto;
+  list-style: none;
+}
+
+.list-books .book {
+  background-color: #d0d7fa;
+  height: fit-content;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+}
+.list-books .book .icon-delete-book {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+.list-books .book:hover .icon-delete-book {
+  opacity: 1;
+}
+.list-books .book >h3{
+  color: black;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 22px;
+}
+.list-books .book >h3>span{
+  color: #003262;
+}
+.list-books .book >p{
+  font-size: 18px;
+  margin: 0 35px;
+  text-transform: capitalize;
+}
+
+
+.books .dialog {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: none;
+  padding: 0;
+}
+
+
+
+.books .formDialog {
+  background-color: #e2e2e2;
+  position: relative;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 40%;
+  margin: 10px auto;
+  border: 1px solid #0095B6;
+  border-radius: 8px;
+}
+.books .dialog .formDialog>h3 {
+  text-align: center;
+  color: #003262;
+  font-weight: bold;
+}
+.books .formDialog .inputGroup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+}
+.books .formDialog .inputGroup>input{
+  width: 100%;
+  background-color: #6082B6;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.books .formDialog .inputGroup>label{
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+}
+.books .formDialog .inputGroup>input:focus{
+  outline: none;
+}
+.books .formDialog .inputGroup>input[type="submit"]{
+  background-color: #003262;
+  font-weight: bold;
+  transition: ease-in-out 0.3s;
+}
+.books .formDialog .inputGroup>input[type="submit"]:hover{
+  opacity: 0.8;
+
+}
+.books .buttonGroup {
+  background-color: #003262;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  margin: 10px;
+  display: block;
+  padding: 5px;
+  transition: ease-in-out 0.3s;
+}
+
+.books .buttonGroup:hover {
+  opacity: 0.8;
+}
+
+
+
+/* Exersizes station style  */
+.exersizes {
+  background-color: #eee;
+  width: 90%;
+  margin: 10px auto;
+
+  border-radius: 8px;
+}
+
+.exersizes>h1 {
+  text-align: center;
+  color: #003262;
+
+}
+
+.exersizes .container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.exersizes .exersize {
+  background-color: #d8d8d8;
+  width: 45%;
+  height: fit-content;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+}
+
+@media (max-width:920px) {
+  .exersizes .exersize {
+    width: 90%;
+  }
+}
+
+.exersizes .exersize .iconExersize {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #003262;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.exersizes .exersize:hover .iconExersize {
+  opacity: 1;
+}
+
+.exersizes .exersize .iconExersize:hover {
+  opacity: 0.8;
+}
+
+.exersizes .exersize>h3 {
+  text-align: center;
+  margin: 0 auto;
+  border-bottom: 2px solid #003262;
+  width: 125px;
+  display: block;
+  padding-bottom: 5px;
+}
+
+.exersizes .exersize .listExersizes {
+  list-style: counts;
+  font-family: 'Kalam', cursive;
+  margin: 0 10px 0;
+  padding: 0 8px 0;
+}
+
+.exersizes .exersize .listExersizes li {
+  width: 95%;
+  height: fit-content;
+  margin: 5px auto;
+  padding: 4px;
+  font-size: 20px;
+}
+
+.exersizes .exersize .listExersizes li span {
+  color: #0095B6;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+
+.exersizes .dialog {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: none;
+  padding: 0;
+}
+
+.exersizes .dialog .formDialog>h3 {
+  text-align: center;
+  color: #003262;
+  font-weight: bold;
+}
+
+.exersizes .formDialog {
+  background-color: #e2e2e2;
+  position: relative;
+  top: 70px;
+  left: 0;
+  right: 0;
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid #0095B6;
+  border-radius: 8px;
+}
+
+.exersizes .table {
+  width: 90%;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  border-radius: 8px;
+}
+
+.exersizes .table thead th {
+  color: #003262;
+}
+
+.exersizes .table tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+.exersizes .table tbody tr:nth-child(even) {
+  background: #dadada;
+}
+
+.exersizes .inputGroup {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.exersizes .inputGroup input {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 2px #757575;
+  transition: ease-in-out 0.3s;
+}
+
+.exersizes .inputGroup input:focus {
+  border: 1px solid #003262;
+}
+
+.exersizes .inputGroup input[type="text"] {
+  width: 50%;
+  transition: ease-in-out 0.3s;
+}
+
+.exersizes .inputGroup input[type="number"] {
+  width: 10%;
+  transition: ease-in-out 0.3s;
+}
+
+.exersizes .inputGroup input[type="submit"] {
+  width: 10%;
+  background-color: #003262;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  transition: ease-in-out 0.3s;
+}
+
+.exersizes .inputGroup input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+.exersizes .buttonGroup {
+  background-color: #003262;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  margin: 10px;
+  display: block;
+  padding: 5px;
+  transition: ease-in-out 0.3s;
+}
+
+.exersizes .buttonGroup:hover {
+  opacity: 0.8;
 }
