@@ -68,4 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+---
 # Management lifeStyle
+---
+#### this project is small and basic to standard and study some tools and techneq that i learned . Used Firebase Database and some tools to function all data inside program .
+
